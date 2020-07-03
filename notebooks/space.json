@@ -1,0 +1,772 @@
+{
+  "hyperparameters": [
+    {
+      "name": "balancing:strategy",
+      "type": "categorical",
+      "choices": [
+        "none",
+        "weighting"
+      ],
+      "default": "none"
+    },
+    {
+      "name": "classifier:__choice__",
+      "type": "categorical",
+      "choices": [
+        "extra_trees",
+        "gradient_boosting",
+        "passive_aggressive",
+        "random_forest",
+        "sgd"
+      ],
+      "default": "random_forest"
+    },
+    {
+      "name": "data_preprocessing:categorical_transformer:categorical_encoding:__choice__",
+      "type": "categorical",
+      "choices": [
+        "no_encoding",
+        "one_hot_encoding"
+      ],
+      "default": "one_hot_encoding"
+    },
+    {
+      "name": "data_preprocessing:categorical_transformer:category_coalescence:__choice__",
+      "type": "categorical",
+      "choices": [
+        "minority_coalescer",
+        "no_coalescense"
+      ],
+      "default": "minority_coalescer"
+    },
+    {
+      "name": "data_preprocessing:numerical_transformer:imputation:strategy",
+      "type": "categorical",
+      "choices": [
+        "mean",
+        "median",
+        "most_frequent"
+      ],
+      "default": "mean"
+    },
+    {
+      "name": "data_preprocessing:numerical_transformer:rescaling:__choice__",
+      "type": "categorical",
+      "choices": [
+        "minmax",
+        "none",
+        "normalize",
+        "quantile_transformer",
+        "robust_scaler",
+        "standardize"
+      ],
+      "default": "standardize"
+    },
+    {
+      "name": "feature_preprocessor:__choice__",
+      "type": "categorical",
+      "choices": [
+        "no_preprocessing"
+      ],
+      "default": "no_preprocessing"
+    },
+    {
+      "name": "classifier:extra_trees:bootstrap",
+      "type": "categorical",
+      "choices": [
+        "True",
+        "False"
+      ],
+      "default": "False"
+    },
+    {
+      "name": "classifier:extra_trees:criterion",
+      "type": "categorical",
+      "choices": [
+        "gini",
+        "entropy"
+      ],
+      "default": "gini"
+    },
+    {
+      "name": "classifier:extra_trees:max_depth",
+      "type": "constant",
+      "value": "None"
+    },
+    {
+      "name": "classifier:extra_trees:max_features",
+      "type": "uniform_float",
+      "log": false,
+      "lower": 0.0,
+      "upper": 1.0,
+      "default": 0.5
+    },
+    {
+      "name": "classifier:extra_trees:max_leaf_nodes",
+      "type": "constant",
+      "value": "None"
+    },
+    {
+      "name": "classifier:extra_trees:min_impurity_decrease",
+      "type": "constant",
+      "value": 0.0
+    },
+    {
+      "name": "classifier:extra_trees:min_samples_leaf",
+      "type": "uniform_int",
+      "log": false,
+      "lower": 1,
+      "upper": 20,
+      "default": 1
+    },
+    {
+      "name": "classifier:extra_trees:min_samples_split",
+      "type": "uniform_int",
+      "log": false,
+      "lower": 2,
+      "upper": 20,
+      "default": 2
+    },
+    {
+      "name": "classifier:extra_trees:min_weight_fraction_leaf",
+      "type": "constant",
+      "value": 0.0
+    },
+    {
+      "name": "classifier:gradient_boosting:early_stop",
+      "type": "categorical",
+      "choices": [
+        "off",
+        "train",
+        "valid"
+      ],
+      "default": "off"
+    },
+    {
+      "name": "classifier:gradient_boosting:l2_regularization",
+      "type": "uniform_float",
+      "log": true,
+      "lower": 1e-10,
+      "upper": 1.0,
+      "default": 1e-10
+    },
+    {
+      "name": "classifier:gradient_boosting:learning_rate",
+      "type": "uniform_float",
+      "log": true,
+      "lower": 0.01,
+      "upper": 1.0,
+      "default": 0.1
+    },
+    {
+      "name": "classifier:gradient_boosting:loss",
+      "type": "constant",
+      "value": "auto"
+    },
+    {
+      "name": "classifier:gradient_boosting:max_bins",
+      "type": "constant",
+      "value": 255
+    },
+    {
+      "name": "classifier:gradient_boosting:max_depth",
+      "type": "constant",
+      "value": "None"
+    },
+    {
+      "name": "classifier:gradient_boosting:max_leaf_nodes",
+      "type": "uniform_int",
+      "log": true,
+      "lower": 3,
+      "upper": 2047,
+      "default": 31
+    },
+    {
+      "name": "classifier:gradient_boosting:min_samples_leaf",
+      "type": "uniform_int",
+      "log": true,
+      "lower": 1,
+      "upper": 200,
+      "default": 20
+    },
+    {
+      "name": "classifier:gradient_boosting:scoring",
+      "type": "constant",
+      "value": "loss"
+    },
+    {
+      "name": "classifier:gradient_boosting:tol",
+      "type": "constant",
+      "value": 1e-07
+    },
+    {
+      "name": "classifier:passive_aggressive:C",
+      "type": "uniform_float",
+      "log": true,
+      "lower": 1e-05,
+      "upper": 10.0,
+      "default": 1.0
+    },
+    {
+      "name": "classifier:passive_aggressive:average",
+      "type": "categorical",
+      "choices": [
+        "False",
+        "True"
+      ],
+      "default": "False"
+    },
+    {
+      "name": "classifier:passive_aggressive:fit_intercept",
+      "type": "constant",
+      "value": "True"
+    },
+    {
+      "name": "classifier:passive_aggressive:loss",
+      "type": "categorical",
+      "choices": [
+        "hinge",
+        "squared_hinge"
+      ],
+      "default": "hinge"
+    },
+    {
+      "name": "classifier:passive_aggressive:tol",
+      "type": "uniform_float",
+      "log": true,
+      "lower": 1e-05,
+      "upper": 0.1,
+      "default": 0.0001
+    },
+    {
+      "name": "classifier:random_forest:bootstrap",
+      "type": "categorical",
+      "choices": [
+        "True",
+        "False"
+      ],
+      "default": "True"
+    },
+    {
+      "name": "classifier:random_forest:criterion",
+      "type": "categorical",
+      "choices": [
+        "gini",
+        "entropy"
+      ],
+      "default": "gini"
+    },
+    {
+      "name": "classifier:random_forest:max_depth",
+      "type": "constant",
+      "value": "None"
+    },
+    {
+      "name": "classifier:random_forest:max_features",
+      "type": "uniform_float",
+      "log": false,
+      "lower": 0.0,
+      "upper": 1.0,
+      "default": 0.5
+    },
+    {
+      "name": "classifier:random_forest:max_leaf_nodes",
+      "type": "constant",
+      "value": "None"
+    },
+    {
+      "name": "classifier:random_forest:min_impurity_decrease",
+      "type": "constant",
+      "value": 0.0
+    },
+    {
+      "name": "classifier:random_forest:min_samples_leaf",
+      "type": "uniform_int",
+      "log": false,
+      "lower": 1,
+      "upper": 20,
+      "default": 1
+    },
+    {
+      "name": "classifier:random_forest:min_samples_split",
+      "type": "uniform_int",
+      "log": false,
+      "lower": 2,
+      "upper": 20,
+      "default": 2
+    },
+    {
+      "name": "classifier:random_forest:min_weight_fraction_leaf",
+      "type": "constant",
+      "value": 0.0
+    },
+    {
+      "name": "classifier:sgd:alpha",
+      "type": "uniform_float",
+      "log": true,
+      "lower": 1e-07,
+      "upper": 0.1,
+      "default": 0.0001
+    },
+    {
+      "name": "classifier:sgd:average",
+      "type": "categorical",
+      "choices": [
+        "False",
+        "True"
+      ],
+      "default": "False"
+    },
+    {
+      "name": "classifier:sgd:fit_intercept",
+      "type": "constant",
+      "value": "True"
+    },
+    {
+      "name": "classifier:sgd:learning_rate",
+      "type": "categorical",
+      "choices": [
+        "optimal",
+        "invscaling",
+        "constant"
+      ],
+      "default": "invscaling"
+    },
+    {
+      "name": "classifier:sgd:loss",
+      "type": "categorical",
+      "choices": [
+        "hinge",
+        "log",
+        "modified_huber",
+        "squared_hinge",
+        "perceptron"
+      ],
+      "default": "log"
+    },
+    {
+      "name": "classifier:sgd:penalty",
+      "type": "categorical",
+      "choices": [
+        "l1",
+        "l2",
+        "elasticnet"
+      ],
+      "default": "l2"
+    },
+    {
+      "name": "classifier:sgd:tol",
+      "type": "uniform_float",
+      "log": true,
+      "lower": 1e-05,
+      "upper": 0.1,
+      "default": 0.0001
+    },
+    {
+      "name": "data_preprocessing:categorical_transformer:category_coalescence:minority_coalescer:minimum_fraction",
+      "type": "uniform_float",
+      "log": true,
+      "lower": 0.0001,
+      "upper": 0.5,
+      "default": 0.01
+    },
+    {
+      "name": "data_preprocessing:numerical_transformer:rescaling:quantile_transformer:n_quantiles",
+      "type": "uniform_int",
+      "log": false,
+      "lower": 10,
+      "upper": 2000,
+      "default": 1000
+    },
+    {
+      "name": "data_preprocessing:numerical_transformer:rescaling:quantile_transformer:output_distribution",
+      "type": "categorical",
+      "choices": [
+        "uniform",
+        "normal"
+      ],
+      "default": "uniform"
+    },
+    {
+      "name": "data_preprocessing:numerical_transformer:rescaling:robust_scaler:q_max",
+      "type": "uniform_float",
+      "log": false,
+      "lower": 0.7,
+      "upper": 0.999,
+      "default": 0.75
+    },
+    {
+      "name": "data_preprocessing:numerical_transformer:rescaling:robust_scaler:q_min",
+      "type": "uniform_float",
+      "log": false,
+      "lower": 0.001,
+      "upper": 0.3,
+      "default": 0.25
+    },
+    {
+      "name": "classifier:gradient_boosting:n_iter_no_change",
+      "type": "uniform_int",
+      "log": false,
+      "lower": 1,
+      "upper": 20,
+      "default": 10
+    },
+    {
+      "name": "classifier:gradient_boosting:validation_fraction",
+      "type": "uniform_float",
+      "log": false,
+      "lower": 0.01,
+      "upper": 0.4,
+      "default": 0.1
+    },
+    {
+      "name": "classifier:sgd:epsilon",
+      "type": "uniform_float",
+      "log": true,
+      "lower": 1e-05,
+      "upper": 0.1,
+      "default": 0.0001
+    },
+    {
+      "name": "classifier:sgd:eta0",
+      "type": "uniform_float",
+      "log": true,
+      "lower": 1e-07,
+      "upper": 0.1,
+      "default": 0.01
+    },
+    {
+      "name": "classifier:sgd:l1_ratio",
+      "type": "uniform_float",
+      "log": true,
+      "lower": 1e-09,
+      "upper": 1.0,
+      "default": 0.15
+    },
+    {
+      "name": "classifier:sgd:power_t",
+      "type": "uniform_float",
+      "log": false,
+      "lower": 1e-05,
+      "upper": 1.0,
+      "default": 0.5
+    }
+  ],
+  "conditions": [
+    {
+      "child": "classifier:extra_trees:bootstrap",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "extra_trees"
+    },
+    {
+      "child": "classifier:extra_trees:criterion",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "extra_trees"
+    },
+    {
+      "child": "classifier:extra_trees:max_depth",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "extra_trees"
+    },
+    {
+      "child": "classifier:extra_trees:max_features",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "extra_trees"
+    },
+    {
+      "child": "classifier:extra_trees:max_leaf_nodes",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "extra_trees"
+    },
+    {
+      "child": "classifier:extra_trees:min_impurity_decrease",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "extra_trees"
+    },
+    {
+      "child": "classifier:extra_trees:min_samples_leaf",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "extra_trees"
+    },
+    {
+      "child": "classifier:extra_trees:min_samples_split",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "extra_trees"
+    },
+    {
+      "child": "classifier:extra_trees:min_weight_fraction_leaf",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "extra_trees"
+    },
+    {
+      "child": "classifier:gradient_boosting:early_stop",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "gradient_boosting"
+    },
+    {
+      "child": "classifier:gradient_boosting:l2_regularization",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "gradient_boosting"
+    },
+    {
+      "child": "classifier:gradient_boosting:learning_rate",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "gradient_boosting"
+    },
+    {
+      "child": "classifier:gradient_boosting:loss",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "gradient_boosting"
+    },
+    {
+      "child": "classifier:gradient_boosting:max_bins",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "gradient_boosting"
+    },
+    {
+      "child": "classifier:gradient_boosting:max_depth",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "gradient_boosting"
+    },
+    {
+      "child": "classifier:gradient_boosting:max_leaf_nodes",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "gradient_boosting"
+    },
+    {
+      "child": "classifier:gradient_boosting:min_samples_leaf",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "gradient_boosting"
+    },
+    {
+      "child": "classifier:gradient_boosting:scoring",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "gradient_boosting"
+    },
+    {
+      "child": "classifier:gradient_boosting:tol",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "gradient_boosting"
+    },
+    {
+      "child": "classifier:passive_aggressive:C",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "passive_aggressive"
+    },
+    {
+      "child": "classifier:passive_aggressive:average",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "passive_aggressive"
+    },
+    {
+      "child": "classifier:passive_aggressive:fit_intercept",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "passive_aggressive"
+    },
+    {
+      "child": "classifier:passive_aggressive:loss",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "passive_aggressive"
+    },
+    {
+      "child": "classifier:passive_aggressive:tol",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "passive_aggressive"
+    },
+    {
+      "child": "classifier:random_forest:bootstrap",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "random_forest"
+    },
+    {
+      "child": "classifier:random_forest:criterion",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "random_forest"
+    },
+    {
+      "child": "classifier:random_forest:max_depth",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "random_forest"
+    },
+    {
+      "child": "classifier:random_forest:max_features",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "random_forest"
+    },
+    {
+      "child": "classifier:random_forest:max_leaf_nodes",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "random_forest"
+    },
+    {
+      "child": "classifier:random_forest:min_impurity_decrease",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "random_forest"
+    },
+    {
+      "child": "classifier:random_forest:min_samples_leaf",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "random_forest"
+    },
+    {
+      "child": "classifier:random_forest:min_samples_split",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "random_forest"
+    },
+    {
+      "child": "classifier:random_forest:min_weight_fraction_leaf",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "random_forest"
+    },
+    {
+      "child": "classifier:sgd:alpha",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "sgd"
+    },
+    {
+      "child": "classifier:sgd:average",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "sgd"
+    },
+    {
+      "child": "classifier:sgd:fit_intercept",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "sgd"
+    },
+    {
+      "child": "classifier:sgd:learning_rate",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "sgd"
+    },
+    {
+      "child": "classifier:sgd:loss",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "sgd"
+    },
+    {
+      "child": "classifier:sgd:penalty",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "sgd"
+    },
+    {
+      "child": "classifier:sgd:tol",
+      "parent": "classifier:__choice__",
+      "type": "EQ",
+      "value": "sgd"
+    },
+    {
+      "child": "data_preprocessing:categorical_transformer:category_coalescence:minority_coalescer:minimum_fraction",
+      "parent": "data_preprocessing:categorical_transformer:category_coalescence:__choice__",
+      "type": "EQ",
+      "value": "minority_coalescer"
+    },
+    {
+      "child": "data_preprocessing:numerical_transformer:rescaling:quantile_transformer:n_quantiles",
+      "parent": "data_preprocessing:numerical_transformer:rescaling:__choice__",
+      "type": "EQ",
+      "value": "quantile_transformer"
+    },
+    {
+      "child": "data_preprocessing:numerical_transformer:rescaling:quantile_transformer:output_distribution",
+      "parent": "data_preprocessing:numerical_transformer:rescaling:__choice__",
+      "type": "EQ",
+      "value": "quantile_transformer"
+    },
+    {
+      "child": "data_preprocessing:numerical_transformer:rescaling:robust_scaler:q_max",
+      "parent": "data_preprocessing:numerical_transformer:rescaling:__choice__",
+      "type": "EQ",
+      "value": "robust_scaler"
+    },
+    {
+      "child": "data_preprocessing:numerical_transformer:rescaling:robust_scaler:q_min",
+      "parent": "data_preprocessing:numerical_transformer:rescaling:__choice__",
+      "type": "EQ",
+      "value": "robust_scaler"
+    },
+    {
+      "child": "classifier:gradient_boosting:n_iter_no_change",
+      "parent": "classifier:gradient_boosting:early_stop",
+      "type": "IN",
+      "values": [
+        "valid",
+        "train"
+      ]
+    },
+    {
+      "child": "classifier:gradient_boosting:validation_fraction",
+      "parent": "classifier:gradient_boosting:early_stop",
+      "type": "EQ",
+      "value": "valid"
+    },
+    {
+      "child": "classifier:sgd:eta0",
+      "parent": "classifier:sgd:learning_rate",
+      "type": "IN",
+      "values": [
+        "invscaling",
+        "constant"
+      ]
+    },
+    {
+      "child": "classifier:sgd:power_t",
+      "parent": "classifier:sgd:learning_rate",
+      "type": "EQ",
+      "value": "invscaling"
+    },
+    {
+      "child": "classifier:sgd:epsilon",
+      "parent": "classifier:sgd:loss",
+      "type": "EQ",
+      "value": "modified_huber"
+    },
+    {
+      "child": "classifier:sgd:l1_ratio",
+      "parent": "classifier:sgd:penalty",
+      "type": "EQ",
+      "value": "elasticnet"
+    }
+  ],
+  "forbiddens": [],
+  "python_module_version": "0.4.12",
+  "json_format_version": 0.1
+}
